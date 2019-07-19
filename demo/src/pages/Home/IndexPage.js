@@ -117,7 +117,7 @@ function IndexPage(props) {
             <a className={styles["ant-dropdown-link"]}>
               <img
                 src={props.userInfoData.avatar}
-                alt=""
+              
               />
               <span>chenmanjie</span>
             </a>

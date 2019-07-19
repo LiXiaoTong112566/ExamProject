@@ -33,16 +33,17 @@ export default {
               })
             );
 
-            dispatch({
-              type: "login/getUserInfo"
-            });
+           
           }
         }
 
         // //获取用户信息
-        // if (getCookie()) {
+       if (getCookie()) {
+          dispatch({
+            type: "login/getUserInfo"
+          });
          
-        // }
+        }
       });
     }
   },
