@@ -157,10 +157,5 @@ export default {
         AllManagerStudentData: state.MangerStudentData.concat(action)
       };
     },
-
-    
-
-  
-
   }
 };

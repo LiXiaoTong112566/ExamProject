@@ -6,7 +6,7 @@ import TestClassCom from "@/components/testClassCom";
 import TestClassSearchBoxCom from "@/components/TestClassSearchBoxCom";
 import testClassCss from "./testClass.scss";
 function testClass(props) {
-  console.log(props);
+  //console.log(props);
   return (
     <div className={testClassCss.testClassPage}> 
       <div className={testClassCss.searchBox}>

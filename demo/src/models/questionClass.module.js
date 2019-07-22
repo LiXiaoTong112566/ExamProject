@@ -1,4 +1,14 @@
-import { questionClass, addType, add, examType, subjectType, getQuestionsType, getQuestions, examAdd } from "@/services"
+import { 
+    questionClass,
+    addType,
+    add, 
+    examType,
+    subjectType,
+    getQuestionsType, 
+    getQuestions, 
+    examAdd
+    
+} from "@/services"
 
 export default {
 
@@ -18,13 +28,10 @@ export default {
     //查询所有的试题类型
     *questionClass({ payload }, { call, put }) {
       // eslint-disable-line
-
       let data = yield call(questionClass)
-
       if (data.code === 1) {
         yield put({ type: "getQuestionClassData", payload: data.data });
       }
-
     },
 
     //添加试题类型
@@ -68,7 +75,6 @@ export default {
     // 获取所有试题
     *getQuestions({ payload }, { call, put }) {
       let data = yield call(getQuestions)
-      console.log(data)
       yield put({
         type: 'getQuestionsAll',
         action: data.data
@@ -77,7 +83,6 @@ export default {
     //添加考试
     *examAdd({ payload }, { call, put }) {
       let data = yield call(examAdd, payload)
-      console.log(data)
       localStorage.exam = JSON.stringify(data.data)
       yield put({
         type: 'getExamAdd',

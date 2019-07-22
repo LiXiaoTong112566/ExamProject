@@ -2,11 +2,11 @@ import React , {useState,useEffect} from 'react';
 import {connect} from "dva";
 import examStyle from "./ExamListDetail.scss"
 function ExamListDetail(props){
-  console.log(props.match.url.split('=')[1])
+  //console.log(props.match.url.split('=')[1])
     useEffect(() => {
         props.examTeachDa(props.match.url.split('=')[1])//获取试卷详情（教师端）
       }, [])
-    console.log(props.examTeachData.questions)
+    //console.log(props.examTeachData.questions)
     return (
         <div>
             <h1>试卷详情</h1>

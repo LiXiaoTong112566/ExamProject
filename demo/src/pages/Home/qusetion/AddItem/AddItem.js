@@ -3,7 +3,8 @@ import { connect } from "dva";
 import styles from './AddItem.scss';
 import { Layout, Form, Button, Input, Select, message } from 'antd';
 import Editor from 'for-editor'
-import {injectIntl} from 'react-intl';
+import { injectIntl } from "react-intl";
+
 function AddItem(props) {
     useEffect(() => {
         // 获取用户信息
@@ -41,13 +42,13 @@ function AddItem(props) {
     return (
         <div className={styles['wrap']}>
             {/* <Header style={{ background: '#f0f2f5', padding: 0 ,height:70}}> */}
-                <h1 className={styles.conhead}>{props.intl.formatMessage({id: 'questions.type.title'})}</h1>
+                <h1 className={styles.conhead}>添加试题</h1>
             {/* </Header> */}
             <Content style={{ margin: '0 16px' }} className={styles.con}>
                 <div style={{ padding: 24, background: '#fff', height: '100%' }}>
                     <Form className="login-form" onSubmit={handleSubmit}>
                         <div className={styles.markcont}>
-                            <p>{props.intl.formatMessage({id: 'questions.titleInformation'})}</p>
+                            <p>题目信息</p>
                             <Form.Item>
                                 {getFieldDecorator('title', {
                                     rules: [{ required: true, message: '请输入题目标题!' }],
@@ -55,7 +56,7 @@ function AddItem(props) {
                                     <Input placeholder="请输入题目标题,不超过20个" style={{ width: '50%' }} />
                                 )}
                             </Form.Item>
-                            <p>{props.intl.formatMessage({id: 'questions.Subjectmanagement'})}</p>
+                            <p>题目管理</p>
                             <Form.Item>
                                 {getFieldDecorator('questions_stem')(
                                     <Editor style={{ height: '350px', width: '100%' }} placeholder='请输入内容...' />
@@ -63,7 +64,8 @@ function AddItem(props) {
                             </Form.Item>
                         </div>
                         <div>
-                            <p>{props.intl.formatMessage({id: 'questions.type.test'})}</p>
+                      
+                            <p>请选择考试类型：</p>
                             <Form.Item>
                                 {getFieldDecorator('exam_id', {
                                     rules: [{ required: true, message: '请输入题目标题!' }],
@@ -80,7 +82,7 @@ function AddItem(props) {
                             </Form.Item>
                         </div>
                         <div>
-                            <p>{props.intl.formatMessage({id: 'questions.type.course'})}</p>
+                            <p>请选择课程类型</p>
                             <Form.Item>
                                 {getFieldDecorator('subject_id', {
                                     rules: [{ required: true, message: '请输入题目标题!' }],
@@ -98,7 +100,7 @@ function AddItem(props) {
 
                         </div>
                         <div>
-                            <p>{props.intl.formatMessage({id: 'questions.type.topic'})}</p>
+                            <p>请选择题目类型：</p>
                             <Form.Item>
                                 {getFieldDecorator('questions_type_id', {
                                     rules: [{ required: true, message: '请输入题目标题!' }],
@@ -116,7 +118,7 @@ function AddItem(props) {
 
                         </div>
                         <div className={styles.markcont}>
-                            <h2 className={styles.daanTit}>{props.intl.formatMessage({id: 'questions.answer'})}</h2>
+                            <h2 className={styles.daanTit}>答案信息</h2>
                             <Form.Item >
                                 {getFieldDecorator('questions_answer', {
                                     initialValue: ''
@@ -125,7 +127,7 @@ function AddItem(props) {
                                 )}
                             </Form.Item>
                         </div>
-                        <Button type="primary" htmlType="submit" className={styles.submit_btn} >{props.intl.formatMessage({id: 'questions.submit'})}</Button>
+                        <Button type="primary" htmlType="submit" className={styles.submit_btn} >提交</Button>
                     </Form>
                 </div>
             </Content>

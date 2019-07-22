@@ -10,7 +10,7 @@ import {
   Icon,
   Spin
 } from "antd";
-const { Column, ColumnGroup } = Table;
+const { Column } = Table;
 const { confirm } = Modal;
 function QuestionClass(props) {
   useEffect(() => {
@@ -46,7 +46,7 @@ function QuestionClass(props) {
     // };
 
     function deleteL(id) {
-      console.log(id)
+      // console.log(id)
       confirm({
         title: '删除',
         content: '确定删除吗？',

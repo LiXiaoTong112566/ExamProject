@@ -6,9 +6,7 @@ export default {
   state: {
     userInfoData: {},
   },
-  subscription: {
-    setup({ dispatch, history }) { }
-  },
+  
   effects: {
     //获取当前用户信息
     *userInfo({ payload }, { call, put }) {

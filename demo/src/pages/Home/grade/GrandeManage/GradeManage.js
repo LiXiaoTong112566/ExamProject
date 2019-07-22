@@ -11,7 +11,7 @@ import {
   Select,
   message
 } from "antd";
-const { Column, ColumnGroup } = Table;
+const { Column} = Table;
 const { Option } = Select;
 
 function GradeManage(props) {
@@ -51,7 +51,7 @@ function GradeManage(props) {
   };
   //点击修改
   let updataL = (record,updata) => {
-    console.log(record)
+    // console.log(record)
     //设置默认值  
     setdefaulta(record.room_text)
     setdefaultaKe(record.subject_text)

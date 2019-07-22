@@ -1,4 +1,11 @@
-import { userUser,identity,interfaceInfo,relation,viewAuthority,identityViewAuthority} from '@/services'
+import { 
+  userUser,
+  identity,
+  interfaceInfo,
+  relation,
+  viewAuthority,
+  identityViewAuthority
+} from '@/services'
 
 export default {
   namespace: 'userManage',

@@ -1,11 +1,11 @@
 import styles from "./IndexPage.scss";
 import axios from "axios";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { Route, NavLink } from "dva/router";
 import { connect } from "dva";
-import { Layout, Menu, Dropdown, Icon, message, Spin, Modal } from "antd";
+import { Layout, Menu, Dropdown, Icon, Spin, Modal } from "antd";
 //试题管理
 import AddItem from "./qusetion/AddItem/AddItem";
 import CheckItem from "./qusetion/CheckItem/CheckItem";
@@ -33,7 +33,7 @@ import DetailCompile from "./qusetion/CheckItem/detailCompile";
 //kaoshiguanli
 import ExamListDetail from "./exam/ExamList/detailX/ExamListDetail";
 import { injectIntl } from "react-intl";
-import Axios from "axios";
+
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -44,15 +44,15 @@ function IndexPage(props) {
   const [visible, setvisible] = useState(false);
   
   const onClick = ({ key }) => {
-    console.log(key);
+    // console.log(key);
     if (key == 1) {
       setvisible(true);
     }
   };
-  console.log(newPath);
+  // console.log(newPath);
   let handleOk = () => {
-    console.log(newPath);
-    console.log(123);
+    // console.log(newPath);
+    // console.log(123);
     props.upDataUserAvatar({
       user_id: props.userInfoData.user_id,
       avatar: newPath
@@ -62,24 +62,20 @@ function IndexPage(props) {
   };
 
   let handleCancel = () => {
-    console.log("取消")
+    // console.log("取消")
     setvisible(false);
   };
 
   //获取input框的值
   function getFileData(e) {
-    console.log(e.nativeEvent);
+    //console.log(e.nativeEvent);
     const data = e.nativeEvent.target.files;
+    // console.log(data)
     let form = new FormData();
     form.append(data[0].name, data[0]);
-    console.log(form.get(e.target.files[0].name));
-    console.log(props);
-    console.log(props.userInfoData);
-
+  
     axios.post("http://123.206.55.50:11000/upload", form).then(res => {
-      console.log(res.data);
       if (res.data.code === 1) {
-        console.log(res.data.data[0].path);
         setNewPath(res.data.data[0].path);//设置新的图片路径
       }
     });
@@ -91,7 +87,6 @@ function IndexPage(props) {
       <Menu.Item key="2">我的班级</Menu.Item>
       <Menu.Item key="3">设置</Menu.Item>
       <Menu.Item key="4">退出登录</Menu.Item>
-
     </Menu>
   );
 
@@ -296,7 +291,6 @@ function IndexPage(props) {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     loadingFlag: state.loading.global,
     ...state.login

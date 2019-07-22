@@ -1,18 +1,18 @@
 import React , {useState,useEffect} from 'react';
 import {connect} from "dva";
 import styles from './ExamList.scss'
-import { Tag, Button, Select, Form , Radio , Table , Divider} from 'antd';
+import {  Button, Select, Form , Radio , Table , Divider} from 'antd';
 import moment from 'moment'
 function ExamList(props){
     const { getFieldDecorator } = props.form;
     const { Option } = Select;
-    const { Column, ColumnGroup } = Table;
+    const { Column } = Table;
     useEffect(() => {
         props.subjectDa()//获取所有课程数据
         props.examTypeDa()//获取考试类型
         props.examListDa()  //获取试卷列表
       }, [])
-      console.log(props.examListData)
+      //console.log(props.examListData)
         //点击
         let [flag , changeBtn] = useState('all')
         let handleBtnChange = (e) => {
@@ -35,7 +35,7 @@ function ExamList(props){
         };
            //点击跳考试详情
         let ToQuestionDetail = (item) => {
-            console.log(item)
+            // console.log(item)
             props.history.push({ 
                 pathname: `/home/ExamListDetail/?id=${item.exam_exam_id}`
         })
@@ -53,8 +53,7 @@ function ExamList(props){
                 })(
                 <Select style={{ width: 300 }}>
                 {
-                   props.examTypeData&&props.examTypeData.map((item, index) => {
-                       
+                   props.examTypeData&&props.examTypeData.map((item, index) => {  
                        return <Option value={item.exam_id} key={item.exam_id}>{item.exam_name}</Option>
                     })
                 }
