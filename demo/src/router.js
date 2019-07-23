@@ -24,6 +24,7 @@ const mapStateToProps = state => {
   };
 };
 let RouterView = connect(mapStateToProps)(props => {
+  
   return (
     <IntlProvider locale={props.locale} messages={localMap[props.locale]}>
       <Router history={props.history}>

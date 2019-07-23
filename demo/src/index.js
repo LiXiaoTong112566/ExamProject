@@ -1,15 +1,10 @@
 import dva from 'dva';
-import createLoading from "dva-loading";  
+ import createLoading from "dva-loading";  
 import './index.css';
-import 'antd/dist/antd.css';
-// 1. Initialize
+
 const app = dva();
 app.use(createLoading())
 
-// 2. Plugins
-// app.use({});
-
-// 3. Model
 app.model(require('./models/login.module').default);
 app.model(require('./models/questionClass.module').default);
 app.model(require('./models/userManage.module').default);

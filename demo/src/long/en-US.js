@@ -33,16 +33,5 @@ export default {
     'router.AwaitingApproval': 'AwaitingApproval',
 
 
-
-
-
-
-
-
-
-
-
-
-
     'questions.type.title': 'ClassifyQuetions',
   }

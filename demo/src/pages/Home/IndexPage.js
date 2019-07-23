@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 import { Route, NavLink, Redirect, Switch } from "dva/router";
 import { connect } from "dva";
-import { Layout, Menu, Dropdown, Icon, message, Spin, Modal } from "antd";
+import { Layout, Menu, Dropdown, Icon,  Spin, Modal } from "antd";
 
 import { injectIntl } from "react-intl";
 
@@ -14,6 +14,7 @@ const { Sider } = Layout;
 const { SubMenu } = Menu;
 
 function IndexPage(props) {
+  
   //在获取我的路由之前啥也不渲染
   if (!props.myView.length) {
     return null;
@@ -152,7 +153,7 @@ function IndexPage(props) {
                 return <Redirect key={item.name} from={item.path} to="/403" />;
               })}
 
-              {/* //配置不存在的路由 */}
+              {/* 配置不存在的路由 */}
               <Redirect to="/404" />
             </Switch>
 
