@@ -5,7 +5,7 @@
 import React, {  useEffect } from "react";
 import { connect } from "dva";
 import { Form,  Input, Button, Select } from "antd";
-import StudentManageCss from "@/pages/Home/grade/SturentManage/StudentManage.scss";
+//import StudentManageCss from "@/pages/Home/grade/SturentManage/StudentManage.scss";
 
 const { Option } = Select;
 

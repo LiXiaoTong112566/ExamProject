@@ -1,6 +1,6 @@
 import React, {  useEffect } from "react";
 import { connect } from "dva";
-import { Table, Divider, Tag, Pagination, LocaleProvider } from "antd";
+import { Table, LocaleProvider } from "antd";
 
 import zh_CN from "antd/lib/locale-provider/zh_CN";
 import moment from "moment";

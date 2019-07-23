@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import { connect } from "dva";
 import readExamScss from "./readExam.scss";
 import XLSX from "xlsx";
-import { Slider, Tooltip, Button, Modal, Table } from "antd";
+import { Slider,  Button, Modal, Table } from "antd";
 
 function testClass(props) {
   let id = props.match.params.id;
