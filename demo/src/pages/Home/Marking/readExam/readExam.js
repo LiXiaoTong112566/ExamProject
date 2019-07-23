@@ -37,15 +37,19 @@ function testClass(props) {
   useEffect(() => {
     props.getStudentExam(id);
   }, []);
-
+//文件读取  导入
   let uploadExcel = e => {
     //FileReader 用来把文件读入内存，并且读取文件中的数据
     var reader = new FileReader();
     reader.onload = function(e) {
+      // console.log(e)
+      //Uint8Array 数组类型表示一个8位无符号整型数组，创建时内容被初始化为0。创建完后，可以以对象的方式或使用数组下标索引的方式引用数组中的元素。
       var data = new Uint8Array(e.target.result);
       var workbook = XLSX.read(data, { type: "array" });
+      //console.log(workbook)
       //读取表
-      var sheetName = workbook.SheetNames[0];
+      var sheetName = workbook.SheetNames[0];//名称
+      //获取的所有数据
       var obj = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
       //处理表格数据
       setData(obj);
@@ -61,7 +65,7 @@ function testClass(props) {
     };
     reader.readAsArrayBuffer(e.target.files[0]);
   };
-
+//  导出 先得有一个文件xlsx
   let exportExcel = () => {
     // 1. 生成workSheet
     var ws = XLSX.utils.json_to_sheet(data);
