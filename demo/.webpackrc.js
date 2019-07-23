@@ -7,6 +7,7 @@ export default{
     "extraBabelPlugins": [
        ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
     ],
+    // webpack   提升速度
     commons: [
         {
           name: 'vendor',

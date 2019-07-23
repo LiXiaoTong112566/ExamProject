@@ -1,5 +1,5 @@
 import dynamic from 'dva/dynamic';
-
+//添加按需加载  缩小文件大小
 //试题管理
 const AddItem = dynamic({
   component: () => import('@/pages/Home/qusetion/AddItem/AddItem'),
