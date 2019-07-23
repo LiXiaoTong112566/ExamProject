@@ -1,10 +1,10 @@
 import axios from "axios";
 import {getCookie} from "@/utils/index.js"
 
+// 用正则判断是线上还是线下
 const service=axios.create({
   baseURL: /jasonandjay.com/.test(window.location.host)?'https://exam.jasonandjay.com'
   :"http://127.0.0.1:7001/",
- 
  
 })
 
