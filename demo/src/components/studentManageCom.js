@@ -2,9 +2,9 @@
  * 学生管理页面Form表单
  */
 
-import React, { useState, useEffect } from "react";
+import React, {  useEffect } from "react";
 import { connect } from "dva";
-import { Form, Icon, Input, Button, Select } from "antd";
+import { Form,  Input, Button, Select } from "antd";
 import StudentManageCss from "@/pages/Home/grade/SturentManage/StudentManage.scss";
 
 const { Option } = Select;

@@ -9,11 +9,11 @@ function AwaitClassCom(props) {
   }, []);
 
   function jumpTestClass(data) {
-    console.log(data);
+    //console.log(data);
     // console.log(routerRedux);
     let { grade_id } = data;
 
-    console.log(props);
+    //console.log(props);
     props.history.push({ pathname: `/home/testClass/${grade_id}`,params:{id:grade_id} });
   }
 

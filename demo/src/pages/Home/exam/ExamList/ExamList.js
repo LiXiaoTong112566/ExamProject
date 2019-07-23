@@ -54,7 +54,7 @@ function ExamList(props){
                 <Select style={{ width: 300 }}>
                 {
                    props.examTypeData&&props.examTypeData.map((item, index) => {  
-                       return <Option value={item.exam_id} key={item.exam_id}>{item.exam_name}</Option>
+                       return <Option value={item.exam_id} key={item.exam_id+"examtype"}>{item.exam_name}</Option>
                     })
                 }
                 </Select>,
@@ -67,7 +67,7 @@ function ExamList(props){
                     <Select style={{ width: 300 }}>
                     {
                         props.subjectData && props.subjectData.map((item, index) => {
-                        return <Option value={item.subject_id} key={item.subject_id}>{item.subject_text}</Option>
+                        return <Option value={item.subject_id} key={item.subject_id+"data"}>{item.subject_text}</Option>
                         })
                     }
                     </Select>,
@@ -102,7 +102,7 @@ function ExamList(props){
                     <Column title="创建人" dataIndex="user_name" rowKey="user_name" />
                     <Column 
                         title="开始时间"
-                        key="start_time"
+                        key="start_time1"
                         render={(text, record) => (
                             <span>
                                 {moment(text.start_time*1).format('YYYY-MM-DD HH:mm:ss')}
@@ -111,7 +111,7 @@ function ExamList(props){
                     />
                      <Column 
                         title="开始时间"
-                        key="end_time"
+                        key="end_time1"
                         render={(text, record) => (
                             <span>
                                 {moment(text.start_time*1).format('YYYY-MM-DD HH:mm:ss')}
@@ -120,10 +120,9 @@ function ExamList(props){
                     />
                     <Column 
                         title="操作"
-                        key="action"
+                        key="action1"
                         render={(text, record) => (
-                            <span>
-                            <a href="javascript:;" onClick={() => { ToQuestionDetail(record) }}>详情</a>
+                            <span onClick={() => { ToQuestionDetail(record) }}>
                             <Divider type="详情" />
                             </span>
                         )}

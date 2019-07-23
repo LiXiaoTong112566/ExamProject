@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "dva";
-import { Table, Divider, Tag } from "antd";
+import { Table } from "antd";
 
-const { Column, ColumnGroup } = Table;
+const { Column} = Table;
 function TestClassCom(props) {
   console.log(props);
   console.log(props.location.params.id);
