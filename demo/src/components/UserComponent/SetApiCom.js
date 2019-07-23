@@ -19,8 +19,6 @@ function AddViewCom(props) {
         message.error(props.setApiData.msg);
       }
     }
-
-
   }, [props.setApiData]);
 
   const handleSubmit = e => {
@@ -31,8 +29,6 @@ function AddViewCom(props) {
         props.setApiIdent(values);
       }
     });
-
-   
   };
 
   //重置
@@ -44,7 +40,6 @@ function AddViewCom(props) {
   return (
     <div className={AdduserCss.borderBox}>
       <div className={AdduserCss.btn}>给身份设置api权限</div>
-
       <Form onSubmit={handleSubmit} className="login-form">
         <Form.Item>
           {getFieldDecorator("identity_id", {

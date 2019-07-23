@@ -34,10 +34,7 @@ function SetViewCom(props) {
         props.setView(values);
       }
     });
-
-   
   };
-
   const { getFieldDecorator } = props.form;
   return (
     <div className={AdduserCss.borderBox}>

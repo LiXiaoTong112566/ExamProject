@@ -14,7 +14,6 @@ import {
   Button,
   Icon,
   Form,
- 
   message
 } from "antd";
 const { Option } = Select;
@@ -30,10 +29,8 @@ function AddUserCom(props) {
             user_name: values.username,
             user_pwd: values.password,
             identity_id: values.identityId
-          });
-       
-      }
-      
+          });  
+      } 
     });
 
     if (props.addUserType) {
@@ -55,9 +52,6 @@ function AddUserCom(props) {
         message.error(props.addUserType.msg);
       }
     }
-
-    
-    // 
   }, [props.addUserType]);
 
   const { getFieldDecorator } = props.form;
@@ -93,7 +87,6 @@ function AddUserCom(props) {
             </Form.Item>
             <Form.Item>
               {getFieldDecorator("password", {
-                // validateTrigger: "onBlur",
                 rules: [
                   { required: true, message: "Please input your Password!" },
                   {

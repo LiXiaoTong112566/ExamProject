@@ -2,13 +2,11 @@ import React, { useEffect } from "react";
 import { connect } from "dva";
 
 import {
- 
   Input,
   Select,
   Button,
   Icon,
   Form,
- 
   message
 } from "antd";
 const { Option } = Select;
@@ -23,17 +21,12 @@ function UpDataUserCom(props) {
       }
     }
   }, [props.upDataUserData]);
-
   const { getFieldDecorator } = props.form;
-
   //更新用户
-
   const handleSubmitUpdata = e => {
     e.preventDefault();
-
     props.form.validateFields((err, values) => {
       let { user_id, user_name, user_pwd, identity_id } = values;
-
       if (!err) {
         if (user_id) {
           props.upDataUser({ user_id, user_name, user_pwd, identity_id });

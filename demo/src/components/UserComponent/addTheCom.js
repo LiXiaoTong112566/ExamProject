@@ -15,7 +15,6 @@ function AddTheCom(props) {
 
   useEffect(()=>{
     if (props.addUIData) {
-     
       if (props.addUIData.code === 1) {
         message.success(props.addUIData.msg);
       } else if(props.addUIData.code===0){
@@ -25,20 +24,13 @@ function AddTheCom(props) {
   },[props.addUIData])
 
   //提交
-
   const handleSubmit = e => {
     e.preventDefault();
     props.form.validateFields((err, values) => {
-     
       if (!err) {
-       
-        props.addIdent({ identity_text: values.text });
-        
+        props.addIdent({ identity_text: values.text }); 
       }
-
     });
-
-   
   };
 
   const { getFieldDecorator } = props.form;
