@@ -27,7 +27,7 @@ function IndexPage(props) {
       setvisible(true);
     }
   };
-
+//将新的图片  传到数据库中
   let handleOk = () => {
     props.upDataUserAvatar({
       user_id: props.userInfoData.user_id,
@@ -42,6 +42,7 @@ function IndexPage(props) {
   };
 
   //获取input框的值
+  //图片更改成功后 要设置新的图片路径 将其发送到后台 才能实现实时刷新
   function getFileData(e) {
     const data = e.nativeEvent.target.files;
     // console.log(data)
@@ -74,7 +75,7 @@ function IndexPage(props) {
           />
         </div>
         <div className={styles["header_right"]}>
-          {/* 头部 */}
+          {/* 头部 中英文切换 */}
           <button
             onClick={() =>
               props.changeLocale(props.intl.locale == "en" ? "zh" : "en")
@@ -82,6 +83,7 @@ function IndexPage(props) {
           >
             {props.intl.locale == "en" ? "英文" : "中文"}
           </button>
+          {/* 用户姓名 头像 */}
           <Dropdown overlay={menu}>
             <a className={styles["ant-dropdown-link"]}>
               <img src={props.userInfoData.avatar} alt="" />
@@ -92,6 +94,7 @@ function IndexPage(props) {
       </div>
 
       <Layout className={styles["ant-layout"]}>
+      {/* 左侧导航栏 */}
         <Sider collapsible>
           <Menu
             theme="dark"
@@ -125,7 +128,7 @@ function IndexPage(props) {
             })}
           </Menu>
         </Sider>
-
+        {/* 右侧二级 */}
         <Layout>
           <div>
             {/* 二级路由区域 */}
@@ -161,7 +164,7 @@ function IndexPage(props) {
           </div>
         </Layout>
       </Layout>
-
+    {/* 弹框 */}
       <Modal
         title="Basic Modal"
         visible={visible}

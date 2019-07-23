@@ -16,7 +16,6 @@ export function getUserSer() {
 }
 
 //更新用户数据
-
 export function upDataUserSer(params) {
   return request.put('/user/user',params)
 }
@@ -64,27 +63,22 @@ export function addIdentity (params){
 export function addapiSer(params){
   return request.get('/user/authorityApi/edit',{params})
 }
-//获取是视图权限
 
+//获取是视图权限
 export function getViewSer(params){
-  
   return request.get('/user/view_authority')
 }
 
 //添加视图权限的接口
-
 export function addViewSer(params){
-  
   return request.get('/user/authorityView/edit',{params})
 }
 
 
 //获取api接口权限
 export function getApiServer(){
-  
   return request.get('/user/api_authority')
 }
-
 
 //添加api接口权限
 export function setApiServer(params){
@@ -92,14 +86,9 @@ export function setApiServer(params){
 }
 
 //给身份设置视图权限
-
 export function setViewSer(params){
   return request.post('/user/setIdentityView',params)
 }
-
-//更新时获取用户数据
-
-
 
 //获取当前用户信息
 export function userUser() {
