@@ -2,8 +2,9 @@ import axios from "axios";
 import {getCookie} from "@/utils/index.js"
 
 const service=axios.create({
-  baseURL:"http://127.0.0.1:7001/",
-  
+  baseURL: 'https://exam.jasonandjay.com',
+  // baseURL:"http://127.0.0.1:7001/",
+ 
 })
 
 service.interceptors.request.use(
