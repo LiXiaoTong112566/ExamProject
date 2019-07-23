@@ -1,3 +1,8 @@
+/**
+ * 阅卷管理 
+ * 表格的导入导出
+ */
+
 import React, { useState,useEffect } from "react";
 import { connect } from "dva";
 import readExamScss from "./readExam.scss";
@@ -34,21 +39,17 @@ function testClass(props) {
   }, []);
 
   let uploadExcel = e => {
+    //FileReader 用来把文件读入内存，并且读取文件中的数据
     var reader = new FileReader();
     reader.onload = function(e) {
       var data = new Uint8Array(e.target.result);
       var workbook = XLSX.read(data, { type: "array" });
-
       //读取表
-
       var sheetName = workbook.SheetNames[0];
-
       var obj = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
       //处理表格数据
       setData(obj);
-
       //处理表头
-
       let columns = Object.keys(obj[0]).map(item => {
         return {
           title: item,
@@ -74,9 +75,8 @@ function testClass(props) {
   return (
     <div className={readExamScss.box}>
         <input type="file" accept="*" placeholder="上传Excel" onChange={uploadExcel}/>
-
         <button onClick={()=>exportExcel()}>导出excel</button>
-        <Table dataSource={data} columns={columns} rowKey="班级"/>;
+        <Table dataSource={data} columns={columns} rowKey="班级"></Table>
       <h1>阅卷</h1>
       <div className={readExamScss.examBox}>
         <div className={readExamScss.leftBox}>
@@ -114,7 +114,7 @@ function testClass(props) {
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <input
           type="file"
           accept="*"
@@ -125,7 +125,7 @@ function testClass(props) {
         <button onClick={() => exportExcel()}>导出excel</button>
 
         <Table dataSource={data} columns={columns} rowKey="班级" />
-      </div>
+      </div> */}
     </div>
   );
 }
